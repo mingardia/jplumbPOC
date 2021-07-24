@@ -19,8 +19,8 @@ jsPlumb.ready(function () {
         list1Ul = list1El.querySelector("ul"),
         list2Ul = list2El.querySelector("ul");
 
-    //instance.draggable(list1El);
-    //instance.draggable(list2El);
+    instance.draggable(list1El);
+    instance.draggable(list2El);
 
     // get uls
     var lists = jsPlumb.getSelector("ul");
@@ -69,9 +69,9 @@ jsPlumb.ready(function () {
 
     // configure list1Ul manually, as it does not have a `jtk-scrollable-list` attribute, whereas list2Ul does, and is therefore
     // configured automatically.
-    //instance.addList(list1Ul, {
-    //    endpoint:["Rectangle", {width:40, height:20}]
-		//});
+    instance.addList(list1Ul, {
+        endpoint:["Rectangle", {width:40, height:20}]
+	});
 
 
     instance.bind("click", function(connection, originalEvent) {instance.deleteConnection(connection); });
