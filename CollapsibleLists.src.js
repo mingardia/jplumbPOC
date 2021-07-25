@@ -99,6 +99,8 @@ const CollapsibleLists = (function(){
       if (li === node){
         ul.style.display = (open ? 'block' : 'none');
       }
+	  
+	 
 
     });
 

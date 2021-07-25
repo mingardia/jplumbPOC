@@ -2,7 +2,7 @@ jsPlumb.ready(function () {
 
     var instance = jsPlumb.getInstance({
         Connector: "Straight",
-        PaintStyle: { strokeWidth: 2, stroke: "#ffa500", "dashstyle": "2 4" },
+        PaintStyle: { strokeWidth: 2, stroke: "#ffa500" },
         Endpoint: [ "Dot", { radius: 3 } ],
         EndpointStyle: { fill: "#ffa500" },
         Container: "canvas",
@@ -42,7 +42,11 @@ jsPlumb.ready(function () {
                 if (isSource) {
                     instance.makeSource(items[i], {
                         allowLoopback: false,
-                        anchor: ["Left", "Right" ]
+                        anchor: ["Right" ],
+						filter: ":not(button)",
+					   //anchors:["Right", "Left" ],
+					    endpoint:"Dot",
+					    endpointStyle:{ fill: "red", radius:2}
                     });
 
                     if (Math.random() < 0.2) {
@@ -52,7 +56,9 @@ jsPlumb.ready(function () {
 
                 if (isTarget) {
                     instance.makeTarget(items[i], {
-                        anchor: ["Left", "Right" ]
+                        anchor: ["Left" ],
+					    endpoint:"Dot",
+					    endpointStyle:{ fill: "red", radius:2 }
                     });
                     if (Math.random() < 0.2) {
                         selectedTargets.push(items[i]);
